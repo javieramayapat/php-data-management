@@ -16,4 +16,12 @@ class ValidateTest extends TestCase
 
     }
 
+    public function test_url(){
+        $url = Validate::url('https://javieramaya.com');
+        $this->assertTrue($url);
+
+        $url = Validate::url('javieramaya.com');
+        $this->assertFalse($url);
+    }
+
 }
